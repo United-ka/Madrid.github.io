@@ -14,9 +14,10 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             background-color: #f4f4f4;
+            color: #333;
         }
 
         header {
@@ -47,17 +48,28 @@
             font-weight: bold;
         }
 
+        /* Hero section */
         .hero {
-            background-image: url('Real Madrid.jpg.webp'); /* Add your background image here */
-            background-size: cover;
+            background-image: url('Real Madrid.jpg.webp'); /* Replace with your background image */
+            background-size: cover; /* Ensures full coverage on small screens */
             background-position: center;
             color: white;
             text-align: center;
             padding: 100px 0;
+            min-height: 400px; /* Sets a minimum height for the hero section */
+        }
+
+        /* For large screens */
+        @media (min-width: 1024px) {
+            .hero {
+                background-size: contain; /* Adjusted for better fit on larger screens */
+                min-height: 500px;
+            }
         }
 
         .hero h1 {
             font-size: 3em;
+            margin-bottom: 15px;
         }
 
         .hero p {
@@ -72,10 +84,14 @@
         .about, .events {
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            padding: 20px;
         }
 
         h2 {
             margin-bottom: 10px;
+            font-size: 1.8em;
+            color: #004D98;
         }
 
         /* Countdown styles */
@@ -104,6 +120,11 @@
             background-color: #333;
             color: white;
             padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 1.2em;
         }
 
         /* Responsive Design */
@@ -135,6 +156,17 @@
                 font-size: 1.5em;
             }
         }
+
+        /* Custom styles for further improvements */
+        .about p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .hero h1, .hero p {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
     </style>
 </head>
 <body>
@@ -155,9 +187,8 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>რეალ მადრიდის ქართული ფან-კლუბი</h1>
-                <p> გამარჯობა მადრიდისტებო</p>
+                <p>გამარჯობა მადრიდისტებო</p>
             </div>
-        </style>
         </section>
            
         <section class="about">
@@ -166,16 +197,14 @@
         </section>
 
         <section class="countdown">
-            <img src="Deportiva_Minera.png.webp" width="80px">
-            <img src="proxy-image.png" width="105px">
+            <img src="Deportiva_Minera.png.webp" width="80px" alt="Deportivo Minera">
+            <img src="proxy-image.png" width="105px" alt="Real Madrid Logo">
             <h2>მომავალი მატჩი</h2>
             <p>დეპორტივა მინერა vs რეალ მადრიდი</p>
             <p><strong>თარიღი:</strong> 6 იანვარი, 2025 | <strong>დრო:</strong> 22:00 (საქართველო)</p>
             <div id="countdown"></div>
         </section>
 
-        
-        </section>
     </main>
 
     <footer>
